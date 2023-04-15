@@ -1,140 +1,112 @@
 import {
+    Center,
     Checkbox,
-    FormControl,
-    FormLabel,
     HStack,
     Heading,
-    Input,
     Select,
     Spacer,
-    VStack,
-    Text,
-    Button,
-    useToast
+    VStack
 } from "@chakra-ui/react"
 import Head from "../components/Head"
 import ColorToggle from "../components/ColorToggle"
-import { useState } from "react"
-
-const array = [
-    {
-        query: "SELECT * FROM orders WHERE order_date >= '$start_date' AND order_total < $max_total AND order_status = $status AND order_id IN ($order_ids) AND order_amount BETWEEN :min_amount AND $max_amount AND customer_id = $customer_id AND order_is_active = $is_active",
-        vul: "Maybe vulnerable"
-    },
-    {
-        query: "INSERT INTO MyGuests (firstname, lastname, email) VALUES ('John', 'Doe', 'john@example.com')",
-        vul: "Not vulnerable directly"
-    },
-    {
-        query: "INSERT INTO tablename (firstname, lastname) VALUES ('John', 'Doe')",
-        vul: "Not vulnerable directly"
-    },
-    {
-        query: "SELECT * FROM mytable WHERE name like '$name'",
-        vul: "Maybe vulnerable"
-    },
-    {
-        query: "UPDATE mytable SET age = $age, isLogin = TRUE WHERE id = '$sessionId'",
-        vul: "Maybe vulnerable"
-    }
-]
+import { useEffect, useState } from "react"
+import InputGroup from "../components/InputGroup"
+import SuggestionBox from "../components/SuggestionBox"
+import getQueries from "../utils/getQueries"
+import UploadButton from "../components/UploadButton"
 
 const Dashboard = () => {
-    const yes = true
-    const toast = useToast()
-    return (
-        <VStack px={8} py={4} spacing={8} w="100%">
-            <Head />
-            <HStack justifyContent="center" alignItems="center" w="100%">
-                <Heading size="lg">SQLi Fix for PHP</Heading>
-                <Spacer />
-                <ColorToggle />
-            </HStack>
-            <Select placeholder="Select a vulnerable part">
-                {array.map((a, i) => {
-                    return (
-                        <option key={a.query} value={i}>
-                            {a.query}
-                        </option>
-                    )
-                })}
-            </Select>
-            {!yes && <Heading size="md">-- Not vulnerable directly --</Heading>}
-            {yes && <Heading size="md">-- Maybe vulnerable --</Heading>}
+    const [queries, setQueries] = useState<string[][]>([])
+    const [corrections, setCorrections] = useState<string[][]>([])
+    const [selected, setSelected] = useState(0)
+    const [file, setFile] = useState("")
 
-            <HStack w="100%" align="start" spacing={4}>
-                <VStack w="67%" borderWidth={2} rounded="md" p={4} spacing={4}>
-                    {yes && (
-                        <FormControl>
-                            <FormLabel>age</FormLabel>
-                            <Input
-                                name="regno"
-                                id="regno"
-                                placeholder="age"
-                                size="md"
-                            />
-                        </FormControl>
-                    )}
-                    {yes && (
-                        <FormControl>
-                            <FormLabel>sessionId</FormLabel>
-                            <Input
-                                name="regno"
-                                id="regno"
-                                placeholder="sessionId"
-                                size="md"
-                            />
-                        </FormControl>
-                    )}
-                    <Button
-                        onClick={() =>
-                            toast({
-                                title: "Corrected",
-                                description:
-                                    "Here is the corrected query to be replaced",
-                                status: "info",
-                                duration: 9000,
-                                isClosable: true
-                            })
-                        }>
-                        Test an attack
-                    </Button>
-                </VStack>
-                <VStack w="33%" spacing={4}>
-                    <VStack
-                        w="100%"
-                        borderWidth={2}
-                        rounded="md"
-                        px={8}
-                        py={4}
-                        align="start">
-                        <Heading size="md">Attack types</Heading>
-                        <Checkbox defaultChecked>SQL Injection</Checkbox>
-                        <Checkbox>XSS Attack</Checkbox>
-                        <Checkbox>Command Line Injection</Checkbox>
-                        <Checkbox>XML Injection</Checkbox>
-                    </VStack>
-                    {yes && (
-                        <VStack
+    async function update(file: string) {
+        if (file !== "") {
+            const q = await getQueries(file)
+            setQueries(q.vulnerable)
+            setCorrections(q.corrections)
+        }
+    }
+
+    useEffect(() => {
+        update(file)
+        console.log(queries)
+    }, [file])
+
+    return (
+        <Center minH="100vh">
+            <VStack
+                px={8}
+                py={4}
+                spacing={8}
+                w={file === "" ? "inherit" : "100%"}
+                minH={file === "" ? "inherit" : "100vh"}>
+                <Head />
+                <HStack justifyContent="center" alignItems="center" w="100%">
+                    <Heading size="lg">SQLi Fix for PHP</Heading>
+                    <Spacer />
+                    {file !== "" && <UploadButton setFile={setFile} />}
+                    <ColorToggle />
+                </HStack>
+                {file === "" && <UploadButton setFile={setFile} />}
+                {file !== "" && (
+                    <VStack w="100%" spacing={4}>
+                        <HStack
                             w="100%"
+                            spacing={8}
                             borderWidth={2}
                             rounded="md"
-                            px={8}
-                            py={4}
+                            p={4}
                             align="start">
-                            <Heading size="md">You can correct it</Heading>
-                            <Text fontSize="md">
-                                Statement type UPDATE <br />
-                                UPDATE mytable SET age = ?, isLogin = TRUE WHERE
-                                id = '?' <br />
-                                bind($age, 0) <br />
-                                bind($sessionId, 1)
-                            </Text>
+                            <Heading size="md">Attack types</Heading>
+                            <Checkbox defaultChecked>SQL Injection</Checkbox>
+                            <Checkbox>XSS Attack</Checkbox>
+                            <Checkbox>Command Line Injection</Checkbox>
+                            <Checkbox>XML Injection</Checkbox>
+                        </HStack>
+                        <VStack spacing={4} w="100%">
+                            <Select placeholder="Select a vulnerable part">
+                                {queries.map((q, i) => {
+                                    return (
+                                        <option
+                                            key={q[0]}
+                                            value={i}
+                                            selected={i == 0}>
+                                            {q[0]}
+                                        </option>
+                                    )
+                                })}
+                            </Select>
+                            <Heading size="md">
+                                --{" "}
+                                {queries.length > 0 &&
+                                queries[selected][1].length > 0
+                                    ? "Maybe vulnerable"
+                                    : "Not vulnerable directly"}{" "}
+                                --
+                            </Heading>
                         </VStack>
-                    )}
-                </VStack>
-            </HStack>
-        </VStack>
+                        {queries.length > 0 &&
+                            queries[selected][1].length > 0 && (
+                                <HStack w="100%" align="start" spacing={4}>
+                                    <InputGroup
+                                        //@ts-ignore
+                                        vars={
+                                            queries.length > 0
+                                                ? queries[selected][1]
+                                                : []
+                                        }
+                                    />
+                                    <SuggestionBox
+                                        query={corrections[selected]}
+                                    />
+                                </HStack>
+                            )}
+                    </VStack>
+                )}
+            </VStack>
+        </Center>
     )
 }
 

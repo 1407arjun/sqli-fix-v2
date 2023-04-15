@@ -1,8 +1,8 @@
 import Head from "next/head"
 
 const PageHead = () => {
-    const title = "Page Title"
-    const desc = "Page Desc"
+    const title = "SQLi Fix"
+    const desc = "SQLi detection and correction"
     const endpoint = "https://example.com"
     const domain = "example.com"
     const siteName = "Page Name"
