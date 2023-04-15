@@ -13,9 +13,6 @@ const InputGroup = ({ query, vars }: { query: string; vars: string[] }) => {
     const toast = useToast()
     const [ips, setIps] = useState(vars.map(() => ""))
 
-    useEffect(() => {
-        console.log(ips)
-    }, [ips])
     return (
         <VStack w="67%" borderWidth={2} rounded="md" p={4} spacing={4}>
             {vars.map((v, i) => {

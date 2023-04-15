@@ -31,7 +31,6 @@ const Dashboard = () => {
 
     useEffect(() => {
         update(file)
-        console.log(queries)
     }, [file])
 
     return (

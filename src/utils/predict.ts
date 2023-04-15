@@ -14,10 +14,8 @@ const predict = async (
                 ips
             }
         )
-        console.log(data)
         return data.prediction
     } catch (e) {
-        console.log(e)
         return false
     }
 }

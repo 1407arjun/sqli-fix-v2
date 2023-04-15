@@ -90,7 +90,6 @@ def prediction():
 def query():
     if request.method == 'POST':
         php = request.json["file"]
-        print(request)
         pattern = r"\"(SELECT|INSERT|UPDATE|DELETE)(.*?)\""
         queries = [i + j for i, j in re.findall(pattern, php, re.DOTALL)]
         print("Performing basic check for variables:")
