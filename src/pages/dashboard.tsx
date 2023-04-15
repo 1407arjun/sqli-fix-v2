@@ -92,6 +92,12 @@ const Dashboard = () => {
                                 <HStack w="100%" align="start" spacing={4}>
                                     <InputGroup
                                         //@ts-ignore
+                                        query={
+                                            queries.length > 0
+                                                ? queries[selected][0]
+                                                : []
+                                        }
+                                        //@ts-ignore
                                         vars={
                                             queries.length > 0
                                                 ? queries[selected][1]
