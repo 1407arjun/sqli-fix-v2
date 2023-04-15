@@ -66,7 +66,12 @@ const Dashboard = () => {
                             <Checkbox>XML Injection</Checkbox>
                         </HStack>
                         <VStack spacing={4} w="100%">
-                            <Select placeholder="Select a vulnerable part">
+                            <Select
+                                placeholder="Select a vulnerable part"
+                                onChange={(e) => {
+                                    //@ts-ignore
+                                    setSelected(Number(e.target.value))
+                                }}>
                                 {queries.map((q, i) => {
                                     return (
                                         <option
