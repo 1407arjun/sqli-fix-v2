@@ -8,9 +8,15 @@ import {
 } from "@chakra-ui/react"
 import { Heading, Text } from "@chakra-ui/react"
 
-const SuggestionBox = ({ query }: { query: string[] }) => {
+const SuggestionBox = ({ text }: { text: string[] }) => {
     return (
-        <Accordion w="33%" borderWidth={2} rounded="md" allowToggle>
+        <Accordion
+            w="100%"
+            borderWidth={2}
+            rounded="md"
+            allowToggle
+            overflowY="auto"
+            h="calc(36vh - 0.5rem)">
             <AccordionItem>
                 <AccordionButton>
                     <Heading size="md" w="100%" textAlign="start">
@@ -19,8 +25,8 @@ const SuggestionBox = ({ query }: { query: string[] }) => {
                     <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel pb={4} as={VStack} alignItems="start">
-                    {query.map((q) => {
-                        return <Text key={q}>{q}</Text>
+                    {text.map((t) => {
+                        return <Text key={t}>{t}</Text>
                     })}
                 </AccordionPanel>
             </AccordionItem>

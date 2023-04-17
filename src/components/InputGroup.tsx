@@ -6,15 +6,22 @@ import {
     VStack,
     useToast
 } from "@chakra-ui/react"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import predict from "../utils/predict"
 
-const InputGroup = ({ query, vars }: { query: string; vars: string[] }) => {
+const InputGroup = ({ vars }: { vars: string[] }) => {
     const toast = useToast()
     const [ips, setIps] = useState(vars.map(() => ""))
 
     return (
-        <VStack w="67%" borderWidth={2} rounded="md" p={4} spacing={4}>
+        <VStack
+            w="100%"
+            borderWidth={2}
+            rounded="md"
+            p={4}
+            spacing={4}
+            overflowY="auto"
+            h="calc(36vh - 0.5rem)">
             {vars.map((v, i) => {
                 return (
                     <FormControl key={v}>
@@ -36,7 +43,7 @@ const InputGroup = ({ query, vars }: { query: string; vars: string[] }) => {
             })}
             <Button
                 onClick={async () => {
-                    if (await predict(query, vars, ips))
+                    if (await predict(vars, ips))
                         toast({
                             title: "SQLi detected",
                             description: "Possible SQL injection attack",
