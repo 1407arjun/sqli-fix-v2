@@ -23,7 +23,7 @@ const FileViewer = ({
             {lines.map((l, i) => {
                 return (
                     <HStack
-                        key={l}
+                        key={l + i}
                         w="100%"
                         alignItems="stretch"
                         cursor="pointer"

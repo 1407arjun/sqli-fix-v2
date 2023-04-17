@@ -10,14 +10,8 @@ import { Heading, Text } from "@chakra-ui/react"
 
 const SuggestionBox = ({ text }: { text: string[] }) => {
     return (
-        <Accordion
-            w="100%"
-            borderWidth={2}
-            rounded="md"
-            allowToggle
-            overflowY="auto"
-            h="calc(34vh - 1rem)">
-            <AccordionItem>
+        <Accordion w="100%" allowToggle overflowY="auto" h="calc(34vh - 1rem)">
+            <AccordionItem borderWidth={2} rounded="md">
                 <AccordionButton>
                     <Heading size="md" w="100%" textAlign="start">
                         You can correct it

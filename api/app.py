@@ -27,19 +27,29 @@ def prediction():
                     break
         return {"prediction": attack}
 
-@app.route("/query", methods=["POST"])
+@app.route("/sqli", methods=["POST"])
 @cross_origin(supports_credentials=True)
-def query():
+def sqli():
     if request.method == 'POST':
-        php = request.json["file"]
-        vulnerable = identify_sqli(php)
-        corrections = []
-        for v in vulnerable:
-            if len(v[1]) > 0:
-                corrections.append(correct_sqli(v[0]))
+        php = request.json["line"]
+        vars = identify_sqli(php)
+
+        msg = ""
+        correction = []
+
+        if len(vars) == 1:
+            if (len(vars[0][1]) > 0):
+                msg = "Maybe vulnerable"
+                correction = correct_sqli(vars[0][0])
+                vars = vars[0][1]
             else:
-                corrections.append([])
-        return {"vulnerable": vulnerable, "corrections": corrections}
+                msg = "Not directly vulnerable"
+                vars = []
+        else:
+            msg = "No SQL statement found"
+
+        print(correction)
+        return {"msg": msg, "vars": vars, "correction": correction}
     
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)

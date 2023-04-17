@@ -40,6 +40,8 @@ const Dashboard = () => {
 
     useEffect(() => {
         setMsg(null)
+        setVars([])
+        setCorrection([])
         update(file, selected)
     }, [file, selected])
 
@@ -92,14 +94,16 @@ const Dashboard = () => {
                                 setSelected={setSelected}
                             />
                             <VStack w="50%" spacing={4}>
-                                <HStack w="100%">
+                                <HStack w="100%" py={2}>
                                     <InfoIcon alignSelf="start" fontSize="lg" />
                                     <Heading size="sm">
                                         {msg ? msg : "Select a line"}
                                     </Heading>
                                 </HStack>
-                                <InputGroup vars={vars} />
-                                <SuggestionBox text={correction} />
+                                {vars.length > 0 && <InputGroup vars={vars} />}
+                                {correction.length > 0 && (
+                                    <SuggestionBox text={correction} />
+                                )}
                             </VStack>
                         </HStack>
                     </VStack>
