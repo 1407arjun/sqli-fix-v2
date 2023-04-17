@@ -93,14 +93,16 @@ const Dashboard = () => {
                                 selected={selected}
                                 setSelected={setSelected}
                             />
-                            <VStack w="50%" spacing={4}>
-                                <HStack w="100%" py={2}>
+                            <VStack w="50%" spacing={4} pt={2}>
+                                <HStack w="100%">
                                     <InfoIcon alignSelf="start" fontSize="lg" />
                                     <Heading size="sm">
                                         {msg ? msg : "Select a line"}
                                     </Heading>
                                 </HStack>
-                                {vars.length > 0 && <InputGroup vars={vars} />}
+                                {vars.length > 0 && (
+                                    <InputGroup vars={vars} attack={attack} />
+                                )}
                                 {correction.length > 0 && (
                                     <SuggestionBox text={correction} />
                                 )}

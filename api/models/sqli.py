@@ -13,8 +13,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 nb_clf = GaussianNB()
 nb_clf.fit(X_train, y_train)
 
-def predict(query, variable, ip):
-    injected_query = query.replace(variable, ip)
+def predict(ip):
+    #injected_query = query.replace(variable, ip)
     features = vectorizer.transform([ip]).toarray()
     return nb_clf.predict(features)[0]
 

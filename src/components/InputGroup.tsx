@@ -9,7 +9,7 @@ import {
 import { useState } from "react"
 import predict from "../utils/predict"
 
-const InputGroup = ({ vars }: { vars: string[] }) => {
+const InputGroup = ({ vars, attack }: { vars: string[]; attack: string }) => {
     const toast = useToast()
     const [ips, setIps] = useState(vars.map(() => ""))
 
@@ -21,7 +21,7 @@ const InputGroup = ({ vars }: { vars: string[] }) => {
             p={4}
             spacing={4}
             overflowY="auto"
-            h="calc(35vh - 2rem)">
+            h="calc(35vh - 1.5rem)">
             {vars.map((v, i) => {
                 return (
                     <FormControl key={v}>
@@ -42,19 +42,24 @@ const InputGroup = ({ vars }: { vars: string[] }) => {
                 )
             })}
             <Button
+                flexShrink={0}
                 onClick={async () => {
-                    if (await predict(vars, ips))
+                    const { prediction, title, description } = await predict(
+                        ips,
+                        attack
+                    )
+                    if (prediction)
                         toast({
-                            title: "SQLi detected",
-                            description: "Possible SQL injection attack",
+                            title,
+                            description,
                             status: "error",
                             duration: 9000,
                             isClosable: true
                         })
                     else
                         toast({
-                            title: "All clear",
-                            description: "Not an attack",
+                            title,
+                            description,
                             status: "success",
                             duration: 9000,
                             isClosable: true
