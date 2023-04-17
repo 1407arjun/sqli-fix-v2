@@ -1,5 +1,5 @@
 import re
-from ..tokenizer import RETokenizer
+from tokenizer import RETokenizer
 
 def identify_sqli(php):
     pattern = r"\"(SELECT|INSERT|UPDATE|DELETE)(.*?)\""

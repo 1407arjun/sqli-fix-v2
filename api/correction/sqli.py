@@ -1,4 +1,4 @@
-from ..tokenizer import RETokenizer
+from tokenizer import RETokenizer
 
 def find_vars(tokens, query):
     variables = []
