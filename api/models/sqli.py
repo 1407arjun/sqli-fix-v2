@@ -15,7 +15,7 @@ nb_clf.fit(X_train, y_train)
 
 def predict(query, variable, ip):
     injected_query = query.replace(variable, ip)
-    features = vectorizer.transform([injected_query]).toarray()
+    features = vectorizer.transform([ip]).toarray()
     return nb_clf.predict(features)[0]
 
 def accuracy():
