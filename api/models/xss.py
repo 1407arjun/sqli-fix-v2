@@ -4,7 +4,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 import pandas as pd
 
-df = pd.read_csv("./data/sqli/sqli.csv", encoding='utf-16')
+df = pd.read_csv("./data/xss/XSS_dataset.csv", encoding='utf-8-sig')
 df['Sentence'] = df['Sentence'].apply(lambda x: str(x).lower())
 vectorizer = CountVectorizer(analyzer='word', ngram_range=(1, 2))
 X = vectorizer.fit_transform(df['Sentence'].values.astype('U')).toarray()
