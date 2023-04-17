@@ -3,6 +3,8 @@ import {
     Checkbox,
     HStack,
     Heading,
+    Radio,
+    RadioGroup,
     Select,
     Spacer,
     VStack
@@ -12,33 +14,40 @@ import ColorToggle from "../components/ColorToggle"
 import { useEffect, useState } from "react"
 import InputGroup from "../components/InputGroup"
 import SuggestionBox from "../components/SuggestionBox"
-import getQueries from "../utils/getQueries"
+import identify from "../utils/identify"
 import UploadButton from "../components/UploadButton"
+import FileViewer from "../components/FileViewer"
+import { InfoIcon } from "@chakra-ui/icons"
 
 const Dashboard = () => {
-    const [queries, setQueries] = useState<string[][]>([])
-    const [corrections, setCorrections] = useState<string[][]>([])
-    const [selected, setSelected] = useState(0)
+    const [attack, setAttack] = useState("sqli")
+    const [selected, setSelected] = useState<number | null>(null)
     const [file, setFile] = useState("")
 
-    async function update(file: string) {
-        if (file !== "") {
-            const q = await getQueries(file)
-            setQueries(q.vulnerable)
-            setCorrections(q.corrections)
+    const [msg, setMsg] = useState<string | null>(null)
+    const [vars, setVars] = useState<string[]>([])
+    const [correction, setCorrection] = useState<string[]>([])
+
+    async function update(file: string, selected: number | null) {
+        if (file !== "" && selected != null) {
+            const lines = file.split("\n")
+            const res = await identify(lines[selected], attack)
+            setMsg(res.msg)
+            setVars(res.vars)
+            setCorrection(res.correction)
         }
     }
 
     useEffect(() => {
-        update(file)
-    }, [file])
+        setMsg(null)
+        update(file, selected)
+    }, [file, selected])
 
     return (
         <Center minH="100vh">
             <VStack
                 px={8}
                 py={4}
-                spacing={8}
                 w={file === "" ? "inherit" : "100%"}
                 minH={file === "" ? "inherit" : "100vh"}>
                 <Head />
@@ -51,68 +60,48 @@ const Dashboard = () => {
                 {file === "" && <UploadButton setFile={setFile} />}
                 {file !== "" && (
                     <VStack w="100%" spacing={4}>
-                        <HStack
+                        <RadioGroup
                             w="100%"
-                            spacing={8}
-                            borderWidth={2}
-                            rounded="md"
-                            p={4}
-                            align="start">
-                            <Heading size="md">Attack types</Heading>
-                            <Checkbox defaultChecked>SQL Injection</Checkbox>
-                            <Checkbox>XSS Attack</Checkbox>
-                            <Checkbox>Command Line Injection</Checkbox>
-                            <Checkbox>XML Injection</Checkbox>
-                        </HStack>
-                        <VStack spacing={4} w="100%">
-                            <Select
-                                placeholder="Select a vulnerable part"
-                                onChange={(e) => {
-                                    //@ts-ignore
-                                    setSelected(Number(e.target.value))
-                                }}>
-                                {queries.map((q, i) => {
-                                    return (
-                                        <option
-                                            key={q[0]}
-                                            value={i}
-                                            selected={i == 0}>
-                                            {q[0]}
-                                        </option>
-                                    )
-                                })}
-                            </Select>
-                            <Heading size="md">
-                                --{" "}
-                                {queries.length > 0 &&
-                                queries[selected][1].length > 0
-                                    ? "Maybe vulnerable"
-                                    : "Not vulnerable directly"}{" "}
-                                --
-                            </Heading>
-                        </VStack>
-                        {queries.length > 0 &&
-                            queries[selected][1].length > 0 && (
-                                <HStack w="100%" align="start" spacing={4}>
-                                    <InputGroup
-                                        //@ts-ignore
-                                        query={
-                                            queries.length > 0
-                                                ? queries[selected][0]
-                                                : []
-                                        }
-                                        //@ts-ignore
-                                        vars={
-                                            queries.length > 0
-                                                ? queries[selected][1]
-                                                : []
-                                        }
-                                    />
-                                    <SuggestionBox
-                                        query={corrections[selected]}
-                                    />
+                            onChange={setAttack}
+                            value={attack}
+                            name="method"
+                            id="method"
+                            defaultValue="sqli">
+                            <HStack
+                                w="100%"
+                                spacing={8}
+                                borderWidth={2}
+                                rounded="md"
+                                p={4}
+                                align="start">
+                                <Heading size="md">Attack types</Heading>
+                                <Radio value="sqli">SQL Injection</Radio>
+                                <Radio value="xss">
+                                    Cross Site Scripting (XSS)
+                                </Radio>
+                                <Radio value="cmdi">
+                                    Command Line Injection
+                                </Radio>
+                                <Radio value="xmli">XML Injection</Radio>
+                            </HStack>
+                        </RadioGroup>
+                        <HStack w="100%" align="start" spacing={4}>
+                            <FileViewer
+                                file={file}
+                                selected={selected}
+                                setSelected={setSelected}
+                            />
+                            <VStack w="50%" spacing={4}>
+                                <HStack w="100%">
+                                    <InfoIcon alignSelf="start" fontSize="lg" />
+                                    <Heading size="sm">
+                                        {msg ? msg : "Select a line"}
+                                    </Heading>
                                 </HStack>
-                            )}
+                                <InputGroup vars={vars} />
+                                <SuggestionBox text={correction} />
+                            </VStack>
+                        </HStack>
                     </VStack>
                 )}
             </VStack>

@@ -21,7 +21,7 @@ const InputGroup = ({ vars }: { vars: string[] }) => {
             p={4}
             spacing={4}
             overflowY="auto"
-            h="calc(36vh - 0.5rem)">
+            h="calc(35vh - 1rem)">
             {vars.map((v, i) => {
                 return (
                     <FormControl key={v}>

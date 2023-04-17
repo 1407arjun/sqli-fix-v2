@@ -16,7 +16,7 @@ const SuggestionBox = ({ text }: { text: string[] }) => {
             rounded="md"
             allowToggle
             overflowY="auto"
-            h="calc(36vh - 0.5rem)">
+            h="calc(34vh - 1rem)">
             <AccordionItem>
                 <AccordionButton>
                     <Heading size="md" w="100%" textAlign="start">
