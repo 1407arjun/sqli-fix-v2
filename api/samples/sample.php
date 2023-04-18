@@ -41,4 +41,8 @@ $sessionId = $_SESSION['id'];
 $conn->query("UPDATE mytable SET age = $age, isLogin = TRUE WHERE id = '$sessionId'");
 
 $conn->close();
+
+$output = exec("ls ".$_GET['modifiers']);
+include($file);
+exec("ping -c 4 " . $_GET['host'])
 ?>
