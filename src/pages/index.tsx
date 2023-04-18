@@ -47,11 +47,7 @@ const Dashboard = () => {
 
     return (
         <Center minH="100vh">
-            <VStack
-                px={8}
-                py={4}
-                w={file === "" ? "inherit" : "100%"}
-                minH={file === "" ? "inherit" : "100vh"}>
+            <VStack px={8} py={4} w={file === "" ? "inherit" : "100%"}>
                 <Head />
                 <HStack justifyContent="center" alignItems="center" w="100%">
                     <Heading size="lg">SQLi Fix for PHP</Heading>
@@ -90,7 +86,7 @@ const Dashboard = () => {
                                 selected={selected}
                                 setSelected={setSelected}
                             />
-                            <VStack w="50%" spacing={4} pt={2}>
+                            <VStack w="40%" spacing={4} pt={2}>
                                 <HStack w="100%">
                                     <InfoIcon alignSelf="start" fontSize="lg" />
                                     <Heading size="sm">

@@ -13,7 +13,7 @@ const FileViewer = ({
     const lines = file.split("\n")
     return (
         <VStack
-            w="50%"
+            w="60%"
             align="start"
             spacing={0}
             overflowY="auto"
