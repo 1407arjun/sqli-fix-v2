@@ -29,7 +29,10 @@ const FileViewer = ({
                         cursor="pointer"
                         bgColor={selected === i ? "gray.700" : "initial"}
                         _hover={{ bgColor: "gray.700" }}
-                        onClick={() => setSelected(i)}>
+                        onClick={() => {
+                            if (selected === i) setSelected(null)
+                            else if (l.trim() != "") setSelected(i)
+                        }}>
                         <Text
                             w={10}
                             flexShrink={0}
