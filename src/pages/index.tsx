@@ -45,6 +45,12 @@ const Dashboard = () => {
         update(file, selected)
     }, [file, selected])
 
+    useEffect(() => {
+        setMsg(null)
+        setVars([])
+        setCorrection([])
+    }, [attack])
+
     return (
         <Center minH="100vh">
             <VStack px={8} py={4} w={file === "" ? "inherit" : "100%"}>
