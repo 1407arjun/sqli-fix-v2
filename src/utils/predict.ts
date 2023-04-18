@@ -9,7 +9,7 @@ const predict = async (
             data: { prediction, title, description }
         }: {
             data: { prediction: boolean; title: string; description: string }
-        } = await axios.post(`http://172.20.10.2:8080/${attack}/predict`, {
+        } = await axios.post(`http://172.17.47.236:8080/${attack}/predict`, {
             ips
         })
         return { prediction, title, description }

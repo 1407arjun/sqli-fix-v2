@@ -81,10 +81,7 @@ const Dashboard = () => {
                                 <Radio value="xss">
                                     Cross Site Scripting (XSS)
                                 </Radio>
-                                <Radio value="cmdi">
-                                    Command Line Injection
-                                </Radio>
-                                <Radio value="xmli">XML Injection</Radio>
+                                <Radio value="cmdi">Command Injection</Radio>
                             </HStack>
                         </RadioGroup>
                         <HStack w="100%" align="start" spacing={4}>

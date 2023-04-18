@@ -8,7 +8,7 @@ const identify = async (
         const {
             data: { msg, vars, correction }
         }: { data: { msg: string; vars: string[]; correction: string[] } } =
-            await axios.post(`http://172.20.10.2:8080/${attack}/identify`, {
+            await axios.post(`http://172.17.47.236:8080/${attack}/identify`, {
                 line
             })
         return { msg, vars, correction }
