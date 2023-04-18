@@ -31,7 +31,10 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $name = $_POST['name'];
-$conn->query("SELECT * FROM mytable WHERE name like '$name'");
+$result = $conn->query("SELECT * FROM mytable WHERE name like '$name'");
+while($row = $result->fetch_assoc()) {
+  
+}
 
 $age = $_POST['age'];
 $sessionId = $_SESSION['id'];

@@ -36,7 +36,7 @@ def xss():
         msg = ""
         correction = []
         
-        if (len(vars[1]) > 0):
+        if vars[2] != -1:
             msg = "Maybe vulnerable"
             correction = correct_xss(vars[0], vars[2])
             vars = vars[1]

@@ -1,4 +1,5 @@
 from tokenizer import RETokenizer
+from identify.xss import find_xss_vars
 
 def find_vars(tokens, query):
     variables = []
@@ -41,11 +42,11 @@ def correct_xss(php, type):
         for i, var in enumerate(variables):
             corrections.append("bind(" + var[0] + ", " + str(i) + ")")
     elif type == 1:
-        tokens = RETokenizer(php, r'\$_GET\[\'?\w+\'\]')
-        tokens += RETokenizer(php, r'\$_POST\[\'?\w+\'\]')
-        tokens += RETokenizer(php, r'\$_SESSION\[\'?\w+\'\]')
-        variables = [token for token in tokens if token.startswith("$_GET") or token.startswith("$_POST") or token.startswith("$_SESSION")]
+        variables = find_xss_vars(php)
         corrections.append("Reflected XSS")
         corrections.append(create_encode(php, variables))
+    elif type == 2:
+        corrections.append("Stored XSS")
+        corrections.append("Possibility of data having XSS, sanitize during traversal")
 
     return corrections
