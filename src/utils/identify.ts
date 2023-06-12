@@ -8,9 +8,12 @@ const identify = async (
         const {
             data: { msg, vars, correction }
         }: { data: { msg: string; vars: string[]; correction: string[] } } =
-            await axios.post(`http://172.17.47.236:8080/${attack}/identify`, {
-                line
-            })
+            await axios.post(
+                `${process.env.NEXT_PUBLIC_FLASK_SERVER}/${attack}/identify`,
+                {
+                    line
+                }
+            )
         return { msg, vars, correction }
     } catch (e) {
         return { msg: "Unknown error occured", vars: [], correction: [] }

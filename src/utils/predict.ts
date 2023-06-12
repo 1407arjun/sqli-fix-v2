@@ -9,9 +9,12 @@ const predict = async (
             data: { prediction, title, description }
         }: {
             data: { prediction: boolean; title: string; description: string }
-        } = await axios.post(`http://172.17.47.236:8080/${attack}/predict`, {
-            ips
-        })
+        } = await axios.post(
+            `${process.env.NEXT_PUBLIC_FLASK_SERVER}/${attack}/predict`,
+            {
+                ips
+            }
+        )
         return { prediction, title, description }
     } catch (e) {
         return {
